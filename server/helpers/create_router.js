@@ -26,7 +26,14 @@ const createRouter = function (collection){
     )
     .then(() => collection.find().toArray())
     .then((docs) => res.json(docs))
-  })
+  });
+
+  router.delete('/:id', (req, res) => {
+    const id = ObjectID(req.params.id)
+    collection.deleteOne({_id: id})
+    .then(() => collection.find().toArray())
+    .then((docs) => res.json(docs))
+  });
 
   return router;
 
