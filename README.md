@@ -23,15 +23,20 @@ Channels:
 data loaded:
 - "BucketList:data-loaded"
 - published by BucketList
-- subscribed to by GridView
+- subscribed to by GridView, FormView
 
 create button has been clicked:
 - "FormView:item-created"
 - published by FormView
 - subscribed to by BucketList
 
+update button has been clicked:
+- "FormView:item-updated"
+- published by FormView
+- subscribed to by BucketList
+
 "mark complete" button has been clicked:
-- "ItemView:item-updated"
+- "ItemView:item-completed"
 - published by ItemView
 - subscribed to by BucketList
 
@@ -41,7 +46,7 @@ delete button has been clicked:
 - subscribed to by BucketList
 
 Database: bucket_list
-Collection: bucket-list
+Collection: bucketlist
 
 Connel and Kevin:
 Client folder

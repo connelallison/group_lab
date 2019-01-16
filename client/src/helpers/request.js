@@ -16,8 +16,17 @@ Request.prototype.post = function (payload) {
     .then((response) => response.json());
 };
 
-Request.prototype.put = function (id) {
+Request.prototype.put = function (id, payload) {
   return fetch(`${this.url}/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then((response) => response.json());
+}
+
+Request.prototype.complete = function (id) {
+  return fetch(`${this.url}/complete/${id}`, {
     method: "PUT",
   })
   .then((response) => response.json());

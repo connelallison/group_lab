@@ -4,37 +4,37 @@ db.dropDatabase();
 db.bucketlist.insertMany([
   {
     name: "Climb Mount Everest",
-    priority: "high",
-    type: "accomplishment",
-    category: "personal",
+    priority: "High",
+    type: "Accomplishment",
+    category: "Personal",
     completed: false
   },
   {
     name: "See A Show On Broadway",
-    priority: "medium",
-    type: "experience",
-    category: "personal",
+    priority: "Medium",
+    type: "Experience",
+    category: "Personal",
     completed: false
   },
   {
     name: "Become CTO Of Apple",
-    priority: "high",
-    type: "experience",
-    category: "career",
+    priority: "High",
+    type: "Experience",
+    category: "Career",
     completed: false
   },
   {
     name: "Finish Codeclan Course",
-    priority: "medium",
-    type: "accomplishment",
-    category: "educational",
+    priority: "Medium",
+    type: "Accomplishment",
+    category: "Educational",
     completed: false
   },
   {
     name: "Have A Family Holiday To Somalia",
-    priority: "low",
-    type: "experience",
-    category: "family",
+    priority: "Low",
+    type: "Experience",
+    category: "Family",
     completed: false
   }
 ]);

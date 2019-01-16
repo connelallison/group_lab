@@ -11,7 +11,11 @@ BucketList.prototype.bindEvents = function () {
     this.postItem(evt.detail);
   });
 
-  PubSub.subscribe("ItemView:item-updated", (evt) => {
+  PubSub.subscribe("FormView:item-updated", (evt) => {
+    this.updateItem(evt.detail);
+  })
+
+  PubSub.subscribe("ItemView:item-completed", (evt) => {
     this.markComplete(evt.detail);
   });
 
@@ -37,8 +41,15 @@ BucketList.prototype.postItem = function (item) {
     .catch(console.error);
 };
 
-BucketList.prototype.markComplete = function (itemId) {
+BucketList.prototype.updateItem = function (itemId, item) {
+  this.request.put(itemId, item)
+  .then((items) => {
+    PubSub.publish("BucketList:data-loaded", items);
+  })
+  .catch(console.error);
+}
 
+BucketList.prototype.markComplete = function (itemId) {
   this.request.put(itemId)
     .then((items) => {
       PubSub.publish('BucketList:data-loaded', items);

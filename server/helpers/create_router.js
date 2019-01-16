@@ -18,7 +18,7 @@ const createRouter = function (collection){
     .then((docs) => res.json(docs))
   });
 
-  router.put('/:id', (req, res) => {
+  router.complete('/:id/complete', (req, res) => {
     const id = ObjectID(req.params.id);
     collection.updateOne(
       {_id: id},
@@ -27,6 +27,17 @@ const createRouter = function (collection){
     .then(() => collection.find().toArray())
     .then((docs) => res.json(docs))
   });
+
+  router.put("/:id", (req, res) => {
+    const id = ObjectID(req.params.id);
+    const updatedItem = req.body;
+    collection.updateOne(
+      {_id: id},
+      {$set: updatedItem}
+    )
+    .then(() => collection.find().toArray())
+    .then((docs) => res.json(docs))
+  })
 
   router.delete('/:id', (req, res) => {
     const id = ObjectID(req.params.id)
