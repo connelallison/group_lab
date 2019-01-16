@@ -32,6 +32,7 @@ ItemView.prototype.createUpdateButton = function (itemId) {
   const button = document.createElement('button');
   button.classList.add('update-btn');
   button.value = itemId;
+  button.textContent = "Mark Complete";
 
   button.addEventListener('click', (evt) => {
     PubSub.publish('ItemView:item-updated', evt.target.value);
@@ -44,6 +45,7 @@ ItemView.prototype.createDeleteButton = function (itemId) {
   const button = document.createElement('button');
   button.classList.add('delete-btn');
   button.value = itemId;
+  button.textContent = "Delete Entry";
 
   button.addEventListener('click', (evt) => {
     PubSub.publish('ItemView:item-deleted', evt.target.value);
