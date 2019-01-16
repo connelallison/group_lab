@@ -42,3 +42,9 @@ delete button has been clicked:
 
 Database: bucket_list
 Collection: bucket-list
+
+Connel and Kevin:
+Client folder
+
+Ally and Daniel:
+Server folder
