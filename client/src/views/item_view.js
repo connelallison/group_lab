@@ -6,7 +6,7 @@ const ItemView = function (container) {
 
 ItemView.prototype.render = function (item) {
   const itemContainer = document.createElement('div');
-  itemContainer.class = 'item';
+  itemContainer.classList.add('item');
 
   itemContainer.innerHTML += `<h3>${item.name}</h3>`;
   itemContainer.innerHTML += `<p>Priority: ${item.priority}</p>`;
