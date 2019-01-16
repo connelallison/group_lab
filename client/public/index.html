@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-GB" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <link rel="stylesheet" href="css/main.css">
+  <title>Bucket List</title>
   <script src="js/bundle.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <h1>My Bucket List</h1>
+  <h3>Add a new item</h3>
+  <form id="form">
+
+    <label for="name">Name:</label>
+    <input autocomplete="off" required type="text" id="name"/>
+
+    <label for="priority">Priority:</label>
+    <select required id="priority">
+      <option selected disabled></option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+
+    <label for="type">Type:</label>
+    <select required id="type">
+      <option selected disabled></option>
+      <option value="experience">Experience</option>
+      <option value="accomplishment">Accomplishment</option>
+    </select>
+
+    <label for="category">Category:</label>
+    <select required id="category">
+      <option selected disabled></option>
+      <option value="educational">Educational</option>
+      <option value="family">Family</option>
+      <option value="career">Career</option>
+      <option value="personal">Personal</option>
+      <option value="other">Other</option>
+    </select>
+
+    <input type="submit" value="Submit" id="submit"/>
+  </form>
+
+  <h2>My List</h2>
+  <div id="grid"></div>
 </body>
 </html>
